@@ -1,0 +1,242 @@
+@import "tailwindcss";
+
+/* ==========================================
+   ❄️ FROSTED GLASS THEME MASTER STYLESHEET
+   ========================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@theme {
+  --font-sans: "Space Grotesk", "Inter", system-ui, -apple-system, sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+  --color-slate-950: #030712;
+}
+
+/* 1. Base Document styling */
+body {
+  background-color: #030712 !important;
+  color: #f8fafc !important;
+  font-family: "Space Grotesk", system-ui, sans-serif;
+  overflow-x: hidden;
+  letter-spacing: -0.01em;
+}
+
+/* 2. Glassmorphic Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.01) !important;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.12) !important;
+  border-radius: 99px !important;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.25) !important;
+}
+
+/* 3. Global Translucency & Transparent Overrides */
+/* Any full-screen min-h-screen container gets transparent to let background blobs shine through */
+.min-h-screen {
+  background-color: transparent !important;
+}
+
+.bg-slate-50, 
+.bg-slate-100, 
+.bg-gray-50, 
+.bg-gray-100, 
+.bg-slate-100\/50, 
+.bg-slate-50\/50 {
+  background-color: transparent !important;
+}
+
+/* 4. White Solid Containers -> Pristine Frosted Glass */
+.bg-white {
+  background-color: rgba(255, 255, 255, 0.04) !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.09) !important;
+  box-shadow: 0 10px 35px -5px rgba(0, 0, 0, 0.45) !important;
+}
+
+/* Cards & Elevated components */
+.shadow-sm, .shadow, .shadow-md, .shadow-lg, .shadow-xl {
+  background-color: rgba(255, 255, 255, 0.05) !important;
+  backdrop-filter: blur(24px) !important;
+  -webkit-backdrop-filter: blur(24px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  box-shadow: 0 12px 40px -8px rgba(0, 0, 0, 0.5) !important;
+  border-radius: 1.25rem !important;
+}
+
+/* Hover scales and premium soft feedback */
+.hover\:shadow-md:hover, .hover\:shadow-lg:hover {
+  background-color: rgba(255, 255, 255, 0.07) !important;
+  border-color: rgba(255, 255, 255, 0.16) !important;
+  box-shadow: 0 20px 45px -5px rgba(0, 0, 0, 0.6) !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+/* 5. Translucent Border Adapters */
+.border, 
+.border-t, 
+.border-b, 
+.border-l, 
+.border-r,
+.border-slate-100, 
+.border-slate-200, 
+.border-slate-300, 
+.border-gray-100, 
+.border-gray-200, 
+.border-slate-800,
+.border-slate-700 {
+  border-color: rgba(255, 255, 255, 0.09) !important;
+}
+
+/* 6. Typography & Contrast Readability in Dark Theme */
+.text-slate-900, 
+.text-slate-800, 
+.text-slate-700, 
+.text-gray-900, 
+.text-gray-800, 
+.text-gray-700 {
+  color: #f1f5f9 !important; /* Crystal Legibility: High contrast off-white */
+}
+
+.text-slate-600, 
+.text-slate-500, 
+.text-slate-400, 
+.text-gray-600, 
+.text-gray-500 {
+  color: #cbd5e1 !important; /* Soft sub-text and secondary content */
+}
+
+/* Ensure headings have bold character */
+h1, h2, h3, h4, th {
+  color: #ffffff !important;
+  font-weight: 600 !important;
+  letter-spacing: -0.02em !important;
+}
+
+/* 7. Dropdowns, Inputs, Textareas and Select Forms */
+input[type="text"], 
+input[type="email"], 
+input[type="password"], 
+input[type="number"], 
+input[type="date"],
+select, 
+textarea {
+  background-color: rgba(255, 255, 255, 0.06) !important;
+  color: #ffffff !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  border-radius: 0.75rem !important;
+  transition: all 0.25s ease !important;
+}
+
+input:focus, select:focus, textarea:focus {
+  background-color: rgba(255, 255, 255, 0.09) !important;
+  border-color: rgba(99, 102, 241, 0.6) !important;
+  outline: none !important;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.25) !important;
+}
+
+input:disabled, textarea:disabled {
+  background-color: rgba(255, 255, 255, 0.02) !important;
+  color: rgba(255, 255, 255, 0.35) !important;
+  border-color: rgba(255, 255, 255, 0.04) !important;
+}
+
+::placeholder {
+  color: rgba(255, 255, 255, 0.32) !important;
+}
+
+select option {
+  background-color: #0f172a !important;
+  color: #f1f5f9 !important;
+}
+
+/* 8. Table Styling */
+table {
+  background-color: transparent !important;
+}
+
+tr {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06) !important;
+  transition: background-color 0.2s ease !important;
+}
+
+tr:hover {
+  background-color: rgba(255, 255, 255, 0.02) !important;
+}
+
+th {
+  background-color: rgba(255, 255, 255, 0.02) !important;
+  color: rgba(255, 255, 255, 0.5) !important;
+  text-transform: uppercase !important;
+  font-size: 0.7rem !important;
+  letter-spacing: 0.05em !important;
+}
+
+/* 9. Specialized Custom Badges & Pillars */
+/* Warning verification banner */
+.bg-amber-50 {
+  background-color: rgba(245, 158, 11, 0.07) !important;
+  border-color: rgba(245, 158, 11, 0.2) !important;
+  color: #fbbf24 !important;
+}
+.text-amber-800 {
+  color: #fef08a !important;
+}
+
+/* Successful indicators */
+.bg-teal-50, .bg-emerald-50, .bg-green-50 {
+  background-color: rgba(16, 185, 129, 0.08) !important;
+  border-color: rgba(16, 185, 129, 0.2) !important;
+  color: #34d399 !important;
+}
+.text-teal-700, .text-teal-800 {
+  color: #2dd4bf !important;
+}
+
+/* Active tabs / buttons layout styling */
+.bg-teal-500 {
+  background-color: #14b8a6 !important;
+  color: #042f2e !important;
+}
+
+.bg-rose-500 {
+  background-color: #f43f5e !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 15px -2px rgba(244, 63, 94, 0.4) !important;
+}
+
+.bg-amber-500 {
+  background-color: #f59e0b !important;
+  color: #1e1b4b !important;
+  box-shadow: 0 4px 15px -2px rgba(245, 158, 11, 0.4) !important;
+}
+
+/* 10. Navigation Headers Glassmorphisms */
+.bg-slate-900, .bg-indigo-950, .bg-\[\#0b1329\], .bg-slate-950 {
+  background-color: rgba(15, 23, 42, 0.4) !important;
+  backdrop-filter: blur(16px) !important;
+  -webkit-backdrop-filter: blur(16px) !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+/* 11. Modal/Overlay Overrides */
+.fixed.inset-0 {
+  background-color: rgba(3, 7, 18, 0.8) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  z-index: 99 !important;
+}
+
+/* 12. Miscellaneous components */
+.divide-y > :not([hidden]) ~ :not([hidden]) {
+  border-color: rgba(255, 255, 255, 0.06) !important;
+}

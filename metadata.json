@@ -1,0 +1,6 @@
+{
+  "name": "ICT Award Evaluation System",
+  "description": "A secure, role-based platform for award participants, jury evaluators, and system organizers featuring smart dynamic forms, anonymous blind progress trackers, and real-time logarithmic calculations.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
